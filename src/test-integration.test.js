@@ -1,4 +1,4 @@
-import Index from './index';
+import Index from './pages/index';
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event';
 import { screen, render, waitFor } from '@testing-library/react';

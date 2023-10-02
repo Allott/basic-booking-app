@@ -30,4 +30,7 @@ describe('Integration Test ', () => {
         expect(screen.getAllByText('Sold out').length).toBe(3)
         expect(screen.getAllByText('Book').length).toBe(3)
     })
+    it.skip('Should filter through the items with the search bar', ()=> {
+        // TODO: Implement this test
+    });
 });

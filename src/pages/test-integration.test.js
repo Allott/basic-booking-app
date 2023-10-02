@@ -18,5 +18,7 @@ describe('Integration Test ', () => {
         await waitFor(() => 
             expect(screen.getAllByText('Austrian Twin/Double')[0]).toBeInTheDocument()
         );
+        expect(screen.getAllByText('Sold out').length).toBe(4)
+        expect(screen.getAllByText('Book').length).toBe(4)
     })
 });

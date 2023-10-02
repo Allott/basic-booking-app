@@ -14,11 +14,20 @@ describe('Integration Test ', () => {
     it('should show available rooms on click', async () => {
         render(<Index />);
         expect(screen.queryByText('Austrian Twin/Double')).not.toBeInTheDocument();
+
+        // Hotel 1
         userEvent.click(screen.getAllByText(/Book now/)[0]);
         await waitFor(() => 
             expect(screen.getAllByText('Austrian Twin/Double')[0]).toBeInTheDocument()
         );
-        expect(screen.getAllByText('Sold out').length).toBe(4)
-        expect(screen.getAllByText('Book').length).toBe(4)
+        expect(screen.getAllByText('Sold out').length).toBe(2)
+
+        // Hotel 2
+        userEvent.click(screen.getAllByText(/Book now/)[0]);
+        await waitFor(() => 
+            expect(screen.getAllByText('Quad')[0]).toBeInTheDocument()
+        );
+        expect(screen.getAllByText('Sold out').length).toBe(3)
+        expect(screen.getAllByText('Book').length).toBe(3)
     })
 });

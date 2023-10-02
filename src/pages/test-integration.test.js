@@ -1,7 +1,7 @@
 import Index from './index';
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event';
-import { screen, render } from '@testing-library/react';
+import { screen, render, waitFor } from '@testing-library/react';
 
 describe('Integration Test ', () => {
     it('should render values', () => {
@@ -16,7 +16,7 @@ describe('Integration Test ', () => {
         expect(screen.queryByText('Austrian Twin/Double')).not.toBeInTheDocument();
         userEvent.click(screen.getAllByText(/Book now/)[0]);
         await waitFor(() => 
-        expect(screen.getByText('Austrian Twin/Double')).toBeInTheDocument()
+            expect(screen.getAllByText('Austrian Twin/Double')[0]).toBeInTheDocument()
         );
     })
 });

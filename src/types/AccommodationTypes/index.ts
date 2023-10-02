@@ -3,6 +3,17 @@ export type FacilityType = {
     label: string;
 }
 
+export type Room = {
+    id: number;
+    name: string;
+    type: string;
+    max_occupancy: number;
+    min_occupancy: number;
+    price?: {
+        price: string;
+    }
+}
+
 export type AccommodationType = {
     id: number;
     name: string;
@@ -12,4 +23,5 @@ export type AccommodationType = {
         name: string;
     };
     facilities: FacilityType[];   
+    rooms: Room[];
 }
